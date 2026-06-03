@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>תרופון מדיל - מידע על תרופות בישראל</title>
+
+  <meta name="description" content="תרופון מדיל הוא אינדקס מהיר ונוח לחיפוש מידע על תרופות בישראל, על בסיס מאגר התרופות של משרד הבריאות ומקורות מידע נוספים.">
+  <meta name="keywords" content="תרופות בישראל, מאגר תרופות, אינדקס תרופות, תרופון, מדיל, תרופון מדיל, חיפוש תרופות, משרד הבריאות תרופות, חומר פעיל, שם מסחרי, סיווג תרופתי, Israeli medications, Medil">
+  <meta name="author" content="Ariel Israel, MD, PhD">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b63ce">
+  <link rel="canonical" href="https://app.medil.co.il/">
+
+  <link rel="icon" type="image/png" href="https://arielisr.github.io/lri-newsletter/graphics/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="https://arielisr.github.io/lri-newsletter/graphics/favicon/favicon.svg">
+  <link rel="shortcut icon" href="https://arielisr.github.io/lri-newsletter/graphics/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://arielisr.github.io/lri-newsletter/graphics/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="https://arielisr.github.io/lri-newsletter/graphics/favicon/site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:title" content="תרופון מדיל">
+  <meta property="og:description" content="מידע על תרופות בישראל, נוח ומהיר לחיפוש.">
+  <meta property="og:url" content="https://app.medil.co.il/">
+  <meta property="og:image" content="https://arielisr.github.io/lri-newsletter/graphics/medil-icon.png">
+
+  <style>
+    :root {
+      --blue: #0b63ce;
+      --blue2: #00a3ff;
+      --ink: #102033;
+      --muted: #5f6f84;
+      --bg: #f5f9ff;
+      --card: #ffffff;
+      --line: #dce8f7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(0,163,255,.18), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 22px 56px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 38px;
+      align-items: center;
+      padding: 34px 0 46px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.75);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 1.05;
+      margin: 22px 0 12px;
+      letter-spacing: -1.5px;
+    }
+
+    .lead {
+      font-size: clamp(19px, 2.3vw, 25px);
+      color: #243a54;
+      margin: 0 0 24px;
+      max-width: 720px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(18,73,130,.08);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(18,73,130,.12);
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      color: white;
+      border: 0;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 300px;
+      margin: auto;
+      display: block;
+      filter: drop-shadow(0 24px 38px rgba(11,99,206,.22));
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 18px 0;
+    }
+
+    .card {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 18px 50px rgba(18,73,130,.07);
+      backdrop-filter: blur(8px);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 56px rgba(18,73,130,.09);
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 0 0 14px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-inline-start: 22px;
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .english {
+      direction: ltr;
+      text-align: left;
+    }
+
+footer {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0 0 12px;
+}
+
+    @media (max-width: 820px) {
+      .wrap {
+        padding: 22px 16px 44px;
+      }
+
+      header,
+      .two {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        text-align: center;
+        padding-top: 14px;
+      }
+
+      .lead {
+        margin-inline: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-img {
+        max-width: 220px;
+        order: -1;
+      }
+  footer > div:first-child {
+    grid-template-columns: 1fr !important;
+  }
+      h1 {
+        letter-spacing: -0.5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header>
+      <section>
+        <div class="badge">אינדקס תרופות ישראלי - גישה מהירה, גם ללא אינטרנט</div>
+        <h1>תרופון מדיל</h1>
+        <p class="lead">מידע על תרופות בישראל, נוח ומהיר לחיפוש. מיועד לרופאים, רוקחים, סטודנטים לרפואה ועובדי מערכת הבריאות.</p>
+
+        <div class="actions">
+          <a class="btn primary" href="https://apkpure.com/ur/medil-israeli-medications-in/il.co.medil">הורדת האפליקציה</a>
+          <a class="btn" href="https://israeldrugs.health.gov.il">מאגר התרופות של משרד הבריאות</a>
+        </div>
+      </section>
+
+      <img class="hero-img" src="https://arielisr.github.io/lri-newsletter/graphics/medil_app.png" alt="סמל תרופון מדיל">
+    </header>
+
+    <section class="grid" aria-label="יתרונות מרכזיים">
+      <div class="card">
+        <h3>חיפוש מהיר</h3>
+        <p>חיפוש לפי שם מסחרי, מרכיב פעיל או סיווג תרופתי.</p>
+      </div>
+
+      <div class="card">
+        <h3>עבודה ללא אינטרנט</h3>
+        <p>גישה נוחה למידע תרופתי גם כאשר אין חיבור זמין.</p>
+      </div>
+
+      <div class="card">
+        <h3>מקורות רשמיים</h3>
+        <p>מבוסס על מאגר התרופות של משרד הבריאות, עם קישורים למקורות נוספים.</p>
+      </div>
+    </section>
+
+    <section class="section two">
+      <div class="card">
+        <h2>מה כוללת האפליקציה?</h2>
+        <p>מדיל הוא אינדקס לחיפוש ולעיון מהיר במידע על תרופות הקיימות בישראל.</p>
+        <ul>
+          <li>מרכיבים פעילים</li>
+          <li>התוויות</li>
+          <li>פרטי הכללה בסל הבריאות ומגבלות הכללה</li>
+          <li>מידע על היצרן ובעל הרישום</li>
+          <li>קישורים לעלונים ולתמונות מאתר משרד הבריאות</li>
+          <li>מידע נבחר מתוך DailyMed והודעות FDA</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>מקורות מידע</h2>
+        <p><strong>מאגר התרופות של משרד הבריאות</strong><br><a href="https://israeldrugs.health.gov.il">israeldrugs.health.gov.il</a></p>
+        <p><strong>DailyMed - U.S. National Library of Medicine</strong><br><a href="https://dailymed.nlm.nih.gov/dailymed/">dailymed.nlm.nih.gov</a></p>
+        <p class="note">המידע מוצג לנוחות המשתמש, ויש לאמת כל החלטה רפואית מול העלון הרשמי ושיקול דעת מקצועי.</p>
+      </div>
+    </section>
+
+    <section class="section card">
+      <h2>הבהרה חשובה</h2>
+      <p>תרופון מדיל היא אפליקציה עצמאית ואינה קשורה, מאושרת או מופעלת על ידי משרד הבריאות, ה-FDA, או כל גוף ממשלתי אחר.</p>
+      <p>המידע מוצג לנוחות המשתמש בלבד ועלול להכיל טעויות, אי-דיוקים או מידע שאינו מעודכן. לפני כל החלטה רפואית יש להסתמך על העלון הרשמי לצרכן או לרופא ועל שיקול דעת רפואי מקצועי.</p>
+    </section>
+
+    <section class="section card english" lang="en">
+      <h2>Truphone MEDIL</h2>
+      <p>Truphone MEDIL is a pocket index of medications available in Israel, intended for physicians, pharmacists, medical students, and healthcare professionals.</p>
+      <p>The application allows fast offline access to medication information published in the Israeli Ministry of Health Drug Registry.</p>
+      <p>Search is available by trade name, active ingredient, or drug classification. Information includes active ingredients, indications, Israeli health basket inclusion and restrictions, manufacturer and registration holder information, links to official leaflets and images, and selected information from FDA and DailyMed records.</p>
+      <p class="note">MEDIL is independently developed and is not affiliated with, endorsed by, approved by, or operated by the Israeli Ministry of Health, the FDA, or any other government agency.</p>
+    </section>
+
+    <footer>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+    
+    <div style="text-align:right;" lang="he">
+      <p>
+        תרופון מדיל היא אפליקציה עצמאית ואינה קשורה, מאושרת או מופעלת על ידי
+        משרד הבריאות, ה-FDA או כל גוף ממשלתי אחר.
+      </p>
+
+      <p>
+        המידע מוצג לנוחות המשתמש בלבד ועלול להכיל טעויות, אי-דיוקים או מידע
+        שאינו מעודכן. לפני כל החלטה רפואית יש להסתמך על העלון הרשמי לצרכן או
+        לרופא ועל שיקול דעת רפואי מקצועי.
+      </p>
+    </div>
+
+    <div style="direction:ltr;text-align:left;" lang="en">
+      <p>
+        MEDIL is an independently developed application and is not affiliated
+        with, endorsed by, approved by, or operated by the Israeli Ministry of
+        Health, the FDA, or any other government agency.
+      </p>
+
+      <p>
+        Information is provided for convenience only and may contain errors,
+        inaccuracies, or outdated content. Users should always rely on official
+        prescribing information and professional medical judgment before making
+        medical decisions.
+      </p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:28px;text-align:center;">
+    © 2026 Medil - Israeli Medication Index
+  </div>
+</footer>
+  </main>
+</body>
+</html>
